@@ -185,12 +185,30 @@ body:has(.SliderBar.Active) {
 :root {
 	--beautiful-lyrics-random-degree: 258deg;
 }
-@keyframes rotate {
-	0% {
-		transform: rotate(var(--beautiful-lyrics-random-degree));
-	}
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-	100% {
-		transform: rotate(calc(var(--beautiful-lyrics-random-degree) + 360deg));
-	}
+.lyrics-background-container{
+  display: block !important;
+}
+.lyrics-background-back-center{
+  animation:rotating 2s linear infinite !important;
+  top:9% !important;
+  right:0 !important;
+  border-radius: 50%;
+  height: 400px !important;
+  width: 400px !important;
+}
+.lyrics-background-color,.lyrics-background-back{
+  display:none;
+}
+.Root__right-sidebar:hover .lyrics-background-back-center{
+animation:none !important;
+display:none;
 }
